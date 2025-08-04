@@ -1,0 +1,1020 @@
+app:
+  description: 按照特定的格式输出专利文件的基本信息，生成权利要求书和说明书摘要，快速了解全文内容。
+  icon: 📝
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 专利结构化摘要-SiliconFlow
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.7@62b7aa3a2ac0cbf22566f671670305175d0b89cf723a41fb88f103eb413b2962
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1743255989029-source-1743256432411-target
+      source: '1743255989029'
+      sourceHandle: source
+      target: '1743256432411'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1743256432411-source-1743256053865-target
+      source: '1743256432411'
+      sourceHandle: source
+      target: '1743256053865'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1743256432411--1743256672508-target
+      source: '1743256432411'
+      sourceHandle: source
+      target: '1743256672508'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1743256053865-source-17432613877870-target
+      source: '1743256053865'
+      sourceHandle: source
+      target: '17432613877870'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1743256672508-source-17432613929630-target
+      source: '1743256672508'
+      sourceHandle: source
+      target: '17432613929630'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1743256432411-source-17432643993050-target
+      source: '1743256432411'
+      sourceHandle: source
+      target: '17432643993050'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432643993050-source-17432645370800-target
+      source: '17432643993050'
+      sourceHandle: source
+      target: '17432645370800'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432613877870-source-1743265967296-target
+      source: '17432613877870'
+      sourceHandle: source
+      target: '1743265967296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432613929630-source-1743265967296-target
+      source: '17432613929630'
+      sourceHandle: source
+      target: '1743265967296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432645370800-source-1743265967296-target
+      source: '17432645370800'
+      sourceHandle: source
+      target: '1743265967296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1743265967296-source-1743266087275-target
+      source: '1743265967296'
+      sourceHandle: source
+      target: '1743266087275'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432643993050-source-17432676044040-target
+      source: '17432643993050'
+      sourceHandle: source
+      target: '17432676044040'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432676044040-source-1743265967296-target
+      source: '17432676044040'
+      sourceHandle: source
+      target: '1743265967296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1743256432411-source-17432687587370-target
+      source: '1743256432411'
+      sourceHandle: source
+      target: '17432687587370'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432687587370-source-1743265967296-target
+      source: '17432687587370'
+      sourceHandle: source
+      target: '1743265967296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432643993050-source-17432700703590-target
+      source: '17432643993050'
+      sourceHandle: source
+      target: '17432700703590'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 17432700703590-source-1743265967296-target
+      source: '17432700703590'
+      sourceHandle: source
+      target: '1743265967296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: 上传专利文件（支持常用文档格式）
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 专利文件
+          max_length: 5
+          options: []
+          required: true
+          type: file
+          variable: patent_file
+      height: 118
+      id: '1743255989029'
+      position:
+        x: 30
+        y: 275.5
+      positionAbsolute:
+        x: 30
+        y: 275.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 摘要提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: json_object
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 71d61e46-a5b6-4e1d-b056-f6aee5ad5ff6
+          role: system
+          text: ''
+        - edition_type: basic
+          id: d528dcf4-6f7b-43f3-bf6b-22e44eac9ee7
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#1743256432411.text#}}，从第一页中提取出该专利文件的摘要，（通常位于第一页中的“(57)摘要”后，可以根据该信息定位）。
+
+
+            示例文本：{本发明涉及计算机数据处理领域，尤其是涉及一种智能网联汽车数据处理系统及方法，读取数据：将车辆数据传输到检测终端中；分析异常数据生成原因：利用本地数据和训练过的专用AI模型，分析各类异常指标或工况的产生原因；判定可能的故障原因：利用本地数据和训练过的专用AI模型，根据各项数据的指标，判定故障类别与故障原因；生成解决方案：为根据参考的问题形成原因，逐条生成参考的异常解决方案。本发明能够完成分析异常数据、判定故障原因之后，还能根据本地和云端数据信息，输出准确的故障
+
+            原因以及问题解决方案，以解决现有技术中数据分析诊断门槛高、自动化程度不足、工程经验依赖程度高的问题。}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 摘要提取
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '1743256053865'
+      position:
+        x: 638
+        y: 275.5
+      positionAbsolute:
+        x: 638
+        y: 275.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: false
+        selected: false
+        title: 文档提取器
+        type: document-extractor
+        variable_selector:
+        - '1743255989029'
+        - patent_file
+      height: 92
+      id: '1743256432411'
+      position:
+        x: 334
+        y: 275.5
+      positionAbsolute:
+        x: 334
+        y: 275.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 权利要求书提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: json_object
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e07ce0df-0885-4835-a07d-4e9c996b4722
+          role: system
+          text: ''
+        - id: 3c23f1a8-a90c-4ae4-9e56-6b03c47e7a3e
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#1743256432411.text#}}，从中提取出“权利要求书”的内容。
+
+
+            权利要求书通常以阿拉伯数字标号开头，例如：
+
+            {
+
+            1 .智能网联汽车数据处理方法，其特征在于，包括以下步骤：
+
+            读取数据：将车辆数据传输到检测终端中；
+
+            分析异常数据生成原因：利用本地数据和训练过的专用AI模型，分析各类异常指标或工况的产生原因；
+
+            判定可能的故障原因：利用本地数据和训练过的专用AI模型，根据各项数据的指标，判定故障类别与故障原因；
+
+            生成解决方案：为根据参考的问题形成原因，逐条生成参考的异常解决方案。
+
+            2.根据权利要求1所述的智能网联汽车数据处理方法，其特征在于：还包括解析数据归档：将本次解析的数据和结果上传到本地机房的边缘计算节点。
+
+            ……
+
+            }'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 权利要求提取
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '1743256672508'
+      position:
+        x: 638
+        y: 466.5
+      positionAbsolute:
+        x: 638
+        y: 466.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 摘要提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: text
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 71d61e46-a5b6-4e1d-b056-f6aee5ad5ff6
+          role: system
+          text: ''
+        - edition_type: basic
+          id: d528dcf4-6f7b-43f3-bf6b-22e44eac9ee7
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#1743256053865.text#}}，生成不超过300字的总结，且字数要比摘要原文更少，并覆盖原始摘要。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 摘要总结
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432613877870'
+      position:
+        x: 942
+        y: 275.5
+      positionAbsolute:
+        x: 942
+        y: 275.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 权利要求书提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: text
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e07ce0df-0885-4835-a07d-4e9c996b4722
+          role: system
+          text: ''
+        - id: 3c23f1a8-a90c-4ae4-9e56-6b03c47e7a3e
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#1743256672508.text#}}，生成300字以内的权利要求总结。
+
+
+            输出的内容不要分段/分点，并且需要指出“本发明专利（或实用新型专利）提出了……要求”。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 权利要求总结
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432613929630'
+      position:
+        x: 942
+        y: 466.5
+      positionAbsolute:
+        x: 942
+        y: 466.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 权利要求书提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: json_object
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e07ce0df-0885-4835-a07d-4e9c996b4722
+          role: system
+          text: ''
+        - id: 3c23f1a8-a90c-4ae4-9e56-6b03c47e7a3e
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#1743256432411.text#}}，从中提取出“说明书”的内容。
+
+
+            说明书通常以4位段落序号开头，例如：
+
+            {
+
+            [0001]本发明涉及计算机数据处理领域，尤其是涉及一种智能网联汽车数据处理系统及方法。
+
+            [0002]汽车车载数据系统在现代汽车工业中扮演着重要角色，它们不断地发展演进，进一步增强了汽车的安全性、便利性和智能化水平。
+
+            ……
+
+            [0015]本发明提供了一种智能网联汽车数据处理系统及方法，以解决现有技术中数据分析诊断门槛高、自动化程度不足、工程经验依赖程度高的问题。
+
+            ……
+
+            [0048]为了更清楚地说明本发明实施例或现有技术中的技术方案，下面将对实施例或现有技术描述中所需要使用的附图作简单地介绍，显而易见地，下面描述中的附图仅仅是本发明的一些实施例，对于本领域普通技术人员来讲，在不付出创造性劳动性的前提下，还可以根据这些附图获得其他的附图。
+
+            ……
+
+            [0054]下面将对本发明实施例中的技术方案进行清楚、完整地描述，显然，所描述的实施例仅仅是本发明一部分实施例，而不是全部的实施例。基于本发明中的实施例，本领域普通技术人员在没有做出创造性劳动前提下所获得的所有其他实施例，都属于本发明保护的范围。
+
+            ……
+
+            }'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 说明书提取
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432643993050'
+      position:
+        x: 638
+        y: 657.5
+      positionAbsolute:
+        x: 638
+        y: 657.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '17432643993050'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 创新点提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: text
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e07ce0df-0885-4835-a07d-4e9c996b4722
+          role: system
+          text: ''
+        - id: 3c23f1a8-a90c-4ae4-9e56-6b03c47e7a3e
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#17432643993050.text#}}，总结出以下内容，每一个项目不超过100字：
+
+            - 应用领域和技术背景；
+
+            - 现有技术方案；
+
+            - 现有技术的不足之处；
+
+            - 本发明/实用新型要解决的问题（具体是“发明”还是“实用新型”，请根据说明书中的提示确定）；
+
+            - 有益效果；
+
+
+            并按照markdown格式输出中文内容
+
+            1.上面提到的每一个分点作为一段，并在段前标明主题作为二级标题，并加粗；
+
+            2.每一项的正文部分不要分段，并控制在100字以内。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 创新点总结
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432645370800'
+      position:
+        x: 942
+        y: 670
+      positionAbsolute:
+        x: 942
+        y: 670
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        default_value:
+        - key: text
+          type: string
+          value: 回答合并失败
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params: {}
+          mode: chat
+          name: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 9cb305e4-b6cd-464d-89b4-829b18749bf5
+          role: system
+          text: ''
+        - id: 6b722761-3736-4f64-8d3d-6f753e24495e
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            你的其他LLM同事已经将一份专利的结构化信息分别提取出来，并存放在{{}}之中，请将其输出为markdown格式显示，并按照以下要求安排内容：
+
+
+            # 基本信息（一级标题）
+
+            在该部分中，请参考{{{{#17432687587370.text#}}}}列出以下信息：
+
+            - 发明/实用新型名称（具体是“发明”还是“实用新型”，请根据上下文提示确定。）：
+
+            - 申请号：
+
+            - 申请日：
+
+
+            # 摘要（一级标题）
+
+            {{{{#17432613877870.text#}}}}（正文）
+
+            {{{{#17432700703590.text#}}}}（正文，按照“**关键词**：AAA；BBB；CCC；”的格式输出）
+
+
+            # 权利要求总结（一级标题）
+
+            {{{{#17432613929630.text#}}}}（正文）
+
+
+            # 创新点（一级标题）
+
+            {{{{#17432645370800.text#}}}}（提示：二级标题或正文）
+
+
+            # 技术方案（一级标题）
+
+            {{{#17432676044040.text#}}}}（正文）
+
+
+            输出要求：
+
+            括号内的提示信息供参考，不需要输出。
+
+            输出信息的时候注意检查markdown格式。
+
+            传入的信息可能与标题有重复，请清除冗余内容。
+
+            确保内容的格式、顺序正确，不要出现提示词无关的内容。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 最终回答
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '1743265967296'
+      position:
+        x: 1246
+        y: 657.5
+      positionAbsolute:
+        x: 1246
+        y: 657.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1743265967296'
+          - text
+          variable: 最终回答
+        selected: false
+        title: 结束
+        type: end
+      height: 90
+      id: '1743266087275'
+      position:
+        x: 1550
+        y: 657.5
+      positionAbsolute:
+        x: 1550
+        y: 657.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '17432643993050'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 技术方案提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: text
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: e07ce0df-0885-4835-a07d-4e9c996b4722
+          role: system
+          text: ''
+        - id: 3c23f1a8-a90c-4ae4-9e56-6b03c47e7a3e
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#17432643993050.text#}}，总结出本发明/实用新型的技术方案，不超过200字。
+
+
+            具体是“发明”还是“实用新型”，请根据说明书中的提示确定。
+
+
+            在输出的过程中，省略以下内容：
+
+            “本发明/实用新型涉及……”
+
+            “具有……效果”'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 技术方案概括
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432676044040'
+      position:
+        x: 942
+        y: 836
+      positionAbsolute:
+        x: 942
+        y: 836
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 摘要提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: json_object
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 71d61e46-a5b6-4e1d-b056-f6aee5ad5ff6
+          role: system
+          text: ''
+        - edition_type: basic
+          id: d528dcf4-6f7b-43f3-bf6b-22e44eac9ee7
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据文档提取提供的专利信息{{#1743256432411.text#}}，从第一页中提取出以下信息：
+
+
+            - 发明/实用新型名称（具体是“发明”还是“实用新型”，请根据说明书中的提示确定。）：（通常为“(54)发明名称”后面的内容，如“一种智能网联汽车数据处理系统及方法”）
+
+
+            - 申请号：（通常为“(21)申请号”后面的内容，如“202210460675.9”或“2022104606759”，小数点可有可无）
+
+
+            - 申请日：（通常为“(22)申请日”后面的内容，如“2022.04.28”）'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 基本信息
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432687587370'
+      position:
+        x: 942
+        y: 1168
+      positionAbsolute:
+        x: 942
+        y: 1168
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1743256432411'
+          - text
+        default_value:
+        - key: text
+          type: string
+          value: 摘要提取错误
+        desc: ''
+        error_strategy: default-value
+        model:
+          completion_params:
+            response_format: json_object
+            temperature: 0.5
+            top_p: 0.5
+          mode: chat
+          name: Qwen/Qwen2.5-7B-Instruct
+          provider: langgenius/siliconflow/siliconflow
+        prompt_template:
+        - id: 71d61e46-a5b6-4e1d-b056-f6aee5ad5ff6
+          role: system
+          text: ''
+        - edition_type: basic
+          id: d528dcf4-6f7b-43f3-bf6b-22e44eac9ee7
+          role: user
+          text: '你是一个专利工程师，请根据以下内容，完成专利文件的分析任务。
+
+
+            请根据说明书{{#17432643993050.text#}}输出5个最能代表本技术方案的关键词。'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        title: 说明书关键词
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 151
+      id: '17432700703590'
+      position:
+        x: 942
+        y: 1002
+      positionAbsolute:
+        x: 942
+        y: 1002
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        author: taohong
+        desc: ''
+        height: 405
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"【作者】taohong","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"【版本】0.1.0","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"【🤖Agent功能】","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"按照特定的格式输出专利文件的基本信息","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"listitem","version":1,"value":1},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"生成权利要求书和说明书摘要，快速了解全文内容","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"listitem","version":1,"value":2},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"后续可以拓展为两份/多份专利文件技术方案对比，并总结异同","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"listitem","version":1,"value":3},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"将结构和LLM提示词微调一下，也可以处理论文、合同等高度结构化的文本","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"listitem","version":1,"value":4}],"direction":"ltr","format":"","indent":0,"type":"list","version":1,"listType":"bullet","start":1,"tag":"ul"},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"【其他说明】","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"目前LLM用的是硅基流动免费的qwen2.5-7b，粗糙地调试了一下流程，当前流程还有很多可以优化的地方。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"后续正式用的时候可以用更适合的LLM处理（如用qwq-32b或者deepseek-r1总结内容，用Qwen2.5-72B-Instruct-128K处理超长专利文本）。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"如果注重隐私，可以在各个节点中调用本地LLM，具体流程可以参考网络上的信息，在此不再赘述。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 539
+      height: 405
+      id: '1743991142874'
+      position:
+        x: 23.571428571428555
+        y: 441.42857142857144
+      positionAbsolute:
+        x: 23.571428571428555
+        y: 441.42857142857144
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 539
+    viewport:
+      x: 85.08447707912082
+      y: -137.44379732608172
+      zoom: 0.9236555375410265
