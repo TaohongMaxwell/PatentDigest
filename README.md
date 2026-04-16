@@ -19,7 +19,7 @@
 - 📌 **多格式支持**：兼容 PDF/DOCX/TXT 等格式的专利文档（需先转为文本）。
 - 🧠 **模块化分析**：采用分步 Prompt 链，确保信息提取的准确性。
 - 📊 **标准化输出**：生成统一的 Markdown 格式报告。
-- 🔧 **平台无关**：主推的 `Skill` 模式不依赖任何特定 AI 平台，可直接在 OpenClaw、OpenCode,、Hermes 等通用 Agent 中运行。
+- 🔧 **平台无关**：主推的 `Skill` 模式不依赖任何特定 AI 平台，可直接在 OpenClaw、OpenCode、Hermes 等通用 Agent 中运行。
 - 🔄 **多专利对比**：支持对多个同领域专利进行独立解析后的横向对比分析。
 
 ## 💡 使用方法
@@ -28,9 +28,18 @@
 
 ### 方式一：使用通用 Skill（推荐）
 
+一键复制并发送给 Agent：
+
+```
+安装 patent-digest skill：https://github.com/TaohongMaxwell/PatentDigest
+```
+
+或者手动操作：
+
 1. 将本项目中的 `skills/patent-digest/` 目录复制到你的 Agent 项目或 Skills 库中。
 2. 按照 `skills/patent-digest/SKILL.md` 中的指引，让 Agent 依次调用 `prompts/` 下的模板文件。
-3. 这种方式完全脱离平台限制，适合集成到各类自定义开发环境中。
+
+这种方式完全脱离平台限制，适合集成到各类自定义开发环境中。
 
 ### 方式二：使用 Dify 工作流
 
